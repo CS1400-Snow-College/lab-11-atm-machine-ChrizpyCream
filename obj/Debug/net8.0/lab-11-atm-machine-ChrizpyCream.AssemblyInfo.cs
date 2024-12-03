@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lab-11-atm-machine-ChrizpyCream")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5aefca5ad8143ed279112c8d1c04d625c26fffff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f615dd10c72730de28da44ee08aebcee54eb9d8f")]
 [assembly: System.Reflection.AssemblyProductAttribute("lab-11-atm-machine-ChrizpyCream")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lab-11-atm-machine-ChrizpyCream")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

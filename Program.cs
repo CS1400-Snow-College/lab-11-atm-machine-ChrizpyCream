@@ -1,4 +1,4 @@
-﻿//Christopher Hercules 
+﻿//Christopher Hercules, 12/2/24, lab 11
 string[] DataBase = File.ReadAllLines("bank.txt"); // changed from Bank.txt to bank.txt|stores them in an array called DataBase
 
 
@@ -8,7 +8,7 @@ string name = " "; //placeholder for user's name
 string saved_data = "";// String variables for saving transaction data and other user details
 string sub_data = "";
 
-// Welcome menu with dynamic greeting, user options displayed
+// user options displayed
 string welcomeMenu = @$"
 Welcome {name} what would you like to do?
 1)Check Balance
@@ -21,28 +21,28 @@ Welcome {name} what would you like to do?
 Please pick the number corresponding to the option.
 ";
 
-// Loop through each line in the database to find the corresponding username and validate the PIN
+// loop through each line in the database to find the corresponding username, money and validate the PIN
 for (int i = 0; i < DataBase.Length; i++)
 {
-    // Split the current line into separate values (assuming CSV format)
+    // split the current line into separate values 
     string[] splitLines = DataBase[i].Split(",");
 
-    // Iterate through the fields of the current line to find the username
+    // iterate through the fields of the current line to find the username
     for (int j = 0; j < splitLines.Length; j++)
     {
-        // If the username matches, prompt for PIN
+        // when the username matches, prompt for PIN
         if (getUsername == splitLines[j])
         {
             Console.WriteLine("ENTER YOUR PIN");
             string getPin = Console.ReadLine(); // User input for PIN
 
-            // Check if the entered PIN is correct
+            // checks if the entered PIN is correct
             if (getPin == splitLines[j + 1])
             {
-                // Clear console after successful PIN verification
+                // it clears console after successful PIN verification
                 Console.Clear();
-                name = splitLines[j]; // Set the name to the username from the database
-                // Update welcome menu with the correct user name
+                name = splitLines[j]; // sets the name to the username from the database
+                // updated welcome menu with the correct user name
                 welcomeMenu = @$"
 Welcome {name} what would you like to do?
 1)Check Balance
@@ -56,14 +56,14 @@ Please pick the number corresponding to the option.
 ";
                 Console.WriteLine(welcomeMenu);
 
-                // Create a queue to store last transactions (up to 5)
+                // creates a queue to store last transactions (up to 5)
                 Queue<string> lastTransactions = new Queue<string>();
-                bool exit = false; // Control flag for exit loop
+                bool exit = false; // control flag for exit loop
                 
-                // Start the menu loop for user interactions
+                // starts the menu loop for user interactions
                 do
                 {
-                    // Ensure only the last 5 transactions are kept in the queue
+                    // makes sure only the last 5 transactions are kept in the queue
                     if (lastTransactions.Count > 5)
                     {
                         lastTransactions.Dequeue(); // Remove the oldest transaction
@@ -71,18 +71,18 @@ Please pick the number corresponding to the option.
 
                     try
                     {
-                        // Read the user's menu choice
+                        // read the user's menu choice
                         int choice = Convert.ToInt32(Console.ReadLine());
                         
-                        // Switch statement for handling different options
+                        // switch statement for handling different options
                         switch (choice)
                         {
                             case 1:
-                                // Display current balance
+                                
                                 Console.WriteLine($"YOUR CURRENT BALANCE STANDS AT {splitLines[j + 2]}");
                                 break;
                             case 2:
-                                // Handle withdrawal request
+                                
                                 Console.WriteLine("HOW MUCH WOULD YOU LIKE TO WITHDRAW?");
                                 string dollarSign = splitLines[j + 2].Substring(0, 1); // Get the currency symbol
                                 string stringBalance = splitLines[j + 2].Substring(1); // Get the numeric balance
@@ -92,7 +92,7 @@ Please pick the number corresponding to the option.
                                 Console.WriteLine("ACCOUNT UPDATED. WHAT IS NEXT?");
                                 break;
                             case 3:
-                                // Handle deposit request
+                               
                                 Console.WriteLine("HOW MUCH WOULD YOU LIKE TO DEPOSIT?");
                                 stringBalance = splitLines[j + 2].Substring(1);
                                 dollarSign = splitLines[j + 2].Substring(0, 1);
@@ -102,7 +102,7 @@ Please pick the number corresponding to the option.
                                 Console.WriteLine("ACCOUNT UPDATED. WHAT IS NEXT?");
                                 break;
                             case 4:
-                                // Display last transactions
+                               
                                 foreach (string transaction in lastTransactions)
                                 {
                                     Console.WriteLine(transaction);
@@ -138,21 +138,20 @@ Please pick the number corresponding to the option.
                     }
                     catch (FormatException)
                     {
-                        // Handle invalid input (non-numeric input)
+                        // non-numeric input
                         Console.WriteLine("DID NOT REGISTER OR OPTION INVALID");
                         Console.WriteLine(welcomeMenu);
                     }
-                } while (exit == false); // Keep the loop going until user chooses to exit
+                } while (exit == false); // keeps the loop going until user chooses to exit
             }
             else
             {
-                // Incorrect PIN handling
+                
                 Console.WriteLine("INCORRECT PIN, TRY AGAIN");
             }
         }
-
-        // Rebuild the data string for saving back to the file
-        sub_data = sub_data + "," + splitLines[j];
+  // rebuild the data string for saving back to the file
+  sub_data = sub_data + "," + splitLines[j];
     }
 
     // Remove the leading comma and add the updated data to saved_data
@@ -161,27 +160,27 @@ Please pick the number corresponding to the option.
     sub_data = "";
 }
 
-// Write the updated bank data back to the "bank.txt" file
+// write the updated bank data back to the "bank.txt" file
 File.WriteAllText("bank.txt", saved_data);
 
-// Method for withdrawing money from an account
+//  withdrawing money from an account
 decimal Withdraw(decimal amountWithdraw, decimal currentBalance)
 {
     try
     {
-        // Check if the withdrawal amount is greater than the current balance
+        // checks if the withdrawal amount is greater than the current balance
         if (currentBalance < amountWithdraw)
         {
             throw new ArgumentException("NOT ENOUGH FUNDS TO PROCEED");
         }
 
-        // Check if the withdrawal amount is negative
+        // (checks if the withdrawal amount is negative) important
         if (amountWithdraw < 0)
         {
             throw new FormatException();
         }
 
-        // Calculate and return the new balance after withdrawal
+        // calculate and return the new balance after withdrawal
         decimal newBalance = currentBalance - amountWithdraw;
         return newBalance;
     }
@@ -194,31 +193,30 @@ decimal Withdraw(decimal amountWithdraw, decimal currentBalance)
     }
 }
 
-// Method for depositing money into an account
+// depositing money into an account
 decimal Deposit(decimal amountDeposit, decimal currentBalance)
 {
     try
     {
-        // Check if the deposit amount is negative
+        // checks if the deposit amount is negative
         if (amountDeposit < 0)
         {
             throw new ArgumentException("THATS A WITHDRAWAL NOT A DEPOSIT");
         }
 
-        // Calculate and return the new balance after deposit
+        // calculate and return the new balance after deposit
         decimal newBalance = currentBalance + amountDeposit;
         return newBalance;
     }
     catch (ArgumentException e)
     {
-        // Handle negative deposit error
+        // handlea negative deposit error
         Console.WriteLine(e.Message);
         Console.WriteLine(welcomeMenu);
-        return currentBalance; // Return the original balance if deposit failed
+        return currentBalance; // returns the original balance if deposit failed
     }
 }
-
-// Method for converting string input to decimal safely
+// converting string input to decimal safely
 decimal ReadDecimal(string getInput)
 {
     decimal number = -1;
@@ -226,23 +224,23 @@ decimal ReadDecimal(string getInput)
     {
         // Convert the input string to decimal
         number = Convert.ToDecimal(getInput);
-    } while (number == -1); // Keep retrying if conversion failed
+    } while (number == -1); // keeps retrying if conversion failed
     return number;
 }
 
-// Method for converting decimal value to string
+// converting decimal value to string
 string decimalToString(decimal Input)
 {
     string Output = "";
     try
     {
-        // Convert decimal to string
+        // convert decimal to string
         Output = Input.ToString();
         return Output;
     }
     catch (Exception)
     {
-        // Handle exception if conversion fails
+        // handle exception if conversion fails
         Console.WriteLine("INVALID STRING");
     }
     return Output; // Return the string representation of the decimal
