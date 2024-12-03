@@ -1,0 +1,15 @@
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\bin\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.exe
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\bin\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.deps.json
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\bin\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.runtimeconfig.json
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\bin\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.dll
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\bin\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.pdb
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.AssemblyInfoInputs.cache
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.AssemblyInfo.cs
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.csproj.CoreCompileInputs.cache
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.sourcelink.json
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.dll
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\refint\lab-11-atm-machine-ChrizpyCream.dll
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.pdb
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\lab-11-atm-machine-ChrizpyCream.genruntimeconfig.cache
+C:\Users\xxlaz\.dotnet\my-code-dir\lab-11-atm-machine-ChrizpyCream\obj\Debug\net8.0\ref\lab-11-atm-machine-ChrizpyCream.dll
